@@ -32,15 +32,15 @@
             </v-col> -->
             <v-col>
               <div class="caption">BuyAve</div>
-              <div>{{ active.buyAve | toMoney }}</div>
+              <div>{{ active.buyAve | toRoundOff4 }}</div>
             </v-col>
             <!-- <v-col>
               <div class="caption">BuyAmountGross</div>
-              <div>{{ active.buyAmountGross | toMoney }}</div>
+              <div>{{ active.buyAmountGross | toRoundOff4 }}</div>
             </v-col> -->
             <v-col>
               <div class="caption">BuyAmountNet</div>
-              <div>{{ active.buyAmountNet | toMoney }}</div>
+              <div>{{ active.buyAmountNet | toRoundOff4 }}</div>
             </v-col>
             <!-- <v-col>
               <div class="caption">SellDate</div>
@@ -48,27 +48,27 @@
             </v-col> -->
             <v-col>
               <div class="caption">SellAve</div>
-              <div>{{ active.sellAve | toMoney }}</div>
+              <div>{{ active.sellAve | toRoundOff4 }}</div>
             </v-col>
             <!-- <v-col>
               <div class="caption">SellAmountGross</div>
-              <div>{{ active.sellAmountGross | toMoney }}</div>
+              <div>{{ active.sellAmountGross | toRoundOff4 }}</div>
             </v-col> -->
             <v-col>
               <div class="caption">SellAmountNet</div>
-              <div>{{ active.sellAmountNet | toMoney }}</div>
+              <div>{{ active.sellAmountNet | toRoundOff4 }}</div>
             </v-col>
             <!-- <v-col>
               <div class="caption">ProfitAmountGross</div>
-              <div>{{ active.profitAmountGross | toMoney }}</div>
+              <div>{{ active.profitAmountGross | toRoundOff4 }}</div>
             </v-col> -->
             <v-col>
               <div class="caption">ProfitAmountNet</div>
-              <div>{{ active.profitAmountNet | toMoney }}</div>
+              <div>{{ active.profitAmountNet | toRoundOff4 }}</div>
             </v-col>
             <v-col>
               <div class="caption">ProfitRate</div>
-              <div>{{ active.profitAmountRate | toMoney }}%</div>
+              <div>{{ active.profitAmountRate | toRoundOff2 }}%</div>
             </v-col>
           </v-row>
         </v-card>
@@ -102,13 +102,13 @@
             >
             <v-spacer></v-spacer>
             <v-btn outlined class="d-none d-lg-block blue green" dark>{{
-              bought | toMoney
+              bought | toRoundOff4
             }}</v-btn>
             <v-btn outlined class="d-none d-lg-block red" dark>{{
-              sold | toMoney
+              sold | toRoundOff4
             }}</v-btn>
             <v-btn outlined class="d-none d-lg-block blue" dark>{{
-              (sold - bought) | toMoney
+              (sold - bought) | toRoundOff4
             }}</v-btn>
           </v-toolbar>
           <v-row>
@@ -135,7 +135,7 @@
                   </v-col>
                   <v-col>
                     <div class="caption">Price</div>
-                    <div>{{ trade.price | toMoney }}</div>
+                    <div>{{ trade.price | toRoundOff4 }}</div>
                   </v-col>
                   <v-col>
                     <div class="caption">Shares</div>
@@ -144,20 +144,20 @@
 
                   <v-col>
                     <div class="caption">Fee (ComTax)</div>
-                    <div>{{ trade.feeComTax | toMoney }}</div>
+                    <div>{{ trade.feeComTax | toRoundOff4 }}</div>
                   </v-col>
                   <v-col>
                     <div class="caption">Fee (Others)</div>
-                    <div>{{ trade.feeOthers | toMoney }}</div>
+                    <div>{{ trade.feeOthers | toRoundOff4 }}</div>
                   </v-col>
                   <v-col>
                     <div class="caption">Amount (Gross)</div>
-                    <div>{{ trade.amountGross | toMoney }}</div>
+                    <div>{{ trade.amountGross | toRoundOff4 }}</div>
                   </v-col>
 
                   <v-col>
                     <div class="caption">Amount (Net)</div>
-                    <div>{{ trade.amountNet | toMoney }}</div>
+                    <div>{{ trade.amountNet | toRoundOff4 }}</div>
                   </v-col>
 
                   <v-col>
@@ -236,15 +236,15 @@
                   </v-col> -->
                   <v-col>
                     <div class="caption">BuyAve</div>
-                    <div>{{ closed.buyAve | toMoney }}</div>
+                    <div>{{ closed.buyAve | toRoundOff4 }}</div>
                   </v-col>
                   <!-- <v-col>
                     <div class="caption">BuyAmountGross</div>
-                    <div>{{ closed.buyAmountGross | toMoney }}</div>
+                    <div>{{ closed.buyAmountGross | toRoundOff4 }}</div>
                   </v-col> -->
                   <v-col>
                     <div class="caption">BuyAmountNet</div>
-                    <div>{{ closed.buyAmountNet | toMoney }}</div>
+                    <div>{{ closed.buyAmountNet | toRoundOff4 }}</div>
                   </v-col>
                   <!-- <v-col>
                     <div class="caption">SellDate</div>
@@ -252,27 +252,27 @@
                   </v-col> -->
                   <v-col>
                     <div class="caption">SellAve</div>
-                    <div>{{ closed.sellAve | toMoney }}</div>
+                    <div>{{ closed.sellAve | toRoundOff4 }}</div>
                   </v-col>
                   <!-- <v-col>
                     <div class="caption">SellAmountGross</div>
-                    <div>{{ closed.sellAmountGross | toMoney }}</div>
+                    <div>{{ closed.sellAmountGross | toRoundOff4 }}</div>
                   </v-col> -->
                   <v-col>
                     <div class="caption">SellAmountNet</div>
-                    <div>{{ closed.sellAmountNet | toMoney }}</div>
+                    <div>{{ closed.sellAmountNet | toRoundOff4 }}</div>
                   </v-col>
                   <!-- <v-col>
                     <div class="caption">ProfitAmountGross</div>
-                    <div>{{ closed.profitAmountGross | toMoney }}</div>
+                    <div>{{ closed.profitAmountGross | toRoundOff4 }}</div>
                   </v-col> -->
                   <v-col>
                     <div class="caption">ProfitAmountNet</div>
-                    <div>{{ closed.profitAmountNet | toMoney }}</div>
+                    <div>{{ closed.profitAmountNet | toRoundOff4 }}</div>
                   </v-col>
                   <v-col>
                     <div class="caption">ProfitRate</div>
-                    <div>{{ closed.profitAmountRate | toMoney }}%</div>
+                    <div>{{ closed.profitAmountRate | toRoundOff2 }}%</div>
                   </v-col>
                 </v-row>
               </v-card>

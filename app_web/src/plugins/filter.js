@@ -7,24 +7,40 @@ Vue.filter('toDateTime', timestamp => {
 
 Vue.filter('toLocaleDate', timestamp => {
     var date = new Date(timestamp)
-    return  date.getFullYear() + '-' + (date.getMonth() + 1) + '-' +  date.getDate()
+    return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate()
 });
 
 Vue.filter('toDouble', value => {
-    return  value / 100;
+    return value / 100;
 });
 
 
-Vue.filter('toMoney', value => {
+Vue.filter('toRoundOff4', value => {
     if (isNaN(value)) return "NaN"
-    let val = (value/1).toFixed(2).replace(',', '.')
-    return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    const options = {
+        minimumFractionDigits: 4,
+        maximumFractionDigits: 4
+    };
+    var formatted = Number(value).toLocaleString('en', options);
+    return formatted
+});
+
+
+Vue.filter('toRoundOff2', value => {
+        if (isNaN(value)) return "NaN"
+        const options = {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        };
+        var formatted = Number(value).toLocaleString('en', options);
+        return formatted
 });
 
 
 Vue.filter('toWhole', value => {
     if (isNaN(value)) return "NaN"
-    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+  
+    return Math.ceil(value)
 });
 
 export default Vue
